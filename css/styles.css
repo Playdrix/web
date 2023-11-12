@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --colorOscuro: #222831;
+    --colorMedianoOscuro: #232D3F;
+    --colorMediano: #393E46;
+    --colorClaro: #EEEEEE;
+    --colorCeleste: #00ADB5;
+
+    --escalaClara: #F0F5F9;
+    --escalaMedianaClara: #C9D6DF;
+    --escalaMedianaOscuro: #52616B;
+    --escalaOscura: #1e2022;
+
+}
+
+body {
+background-color: var(--escalaOscura);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+/* -------- 1. HEADER ------ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--escalaOscura);
+}
+
+.ctn {
+    max-width: 2000px;
+    margin: auto;
+    width: 100%;
+}
+
+.ctn-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5px;
+}
+
+/* -------- 1.1 LOGO ------ */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 5px;
+}
+
+.logo img{
+    width: 22px;
+    margin-left: 20px;
+}
+
+.logo span {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* -------- 1.2 BUSCADOR ------ */
+
+.ctn-buscador {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorMediano)
+}
+
+#input-buscador {
+    width: 100%;
+    border: none;
+    font-size: 0.9rem;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    color: white;
+    background-color: transparent;
+}
+
+.ctn-buscador .fa-solid {
+    font-size: 1rem;
+    color: white;
+}
+
+.ctn-buscador .fa-solid:hover {
+    color: #00ADB5;
+}
+
+/* -------- 1.3 BUSCADOR ------ */
+
+.ctn-botones {
+    display: flex;
+    margin-right: 15px;
+}
+
+.ctn-botones a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: transparent;
+    border-radius: 20px;
+    width: 33px;
+    height: 33px;
+}
+
+/* -------- 1.4 OPCIONES ------ */
+
+.ctn-botones a:hover {
+    background-color: var(--colorMediano);
+}
+
+.fa-user {
+    font-size: 1rem;
+}
+
+/* -------- 2. MENU ------ */
+
+.ctn-menu {
+    position: fixed;
+    top: 0;
+    z-index: -10;
+    width: 190px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 75px 0px 10px 0px;
+    background-color: var(--escalaOscura);
+    overflow: hidden;
+}
+
+.link-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;
+    border-radius: 8px;
+    color: var(--escalaClara);
+    font-family: 'Open Sans', sans-serif;
+    padding: 8px 15px 8px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.link-menu:hover,
+.link-active {
+    background-color: var(--colorMediano);
+    color: white;
+}
+
+.link-menu span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.link-menu .fa-solid {
+    min-width: 25px;
+    width: 25px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----------------------------------- */
+/* --------  CONTENEDOR PAGINA ------ */
+
+.ctn-pagina {
+    position: relative;
+    width: calc(100% - 190px);
+    margin-top: 65px;
+    margin-left: 190px;
+    min-height: calc(100vh - 65px);
+    color: white;
+}
+
+/* -------- 3. CONTENIDO PRINCIPAL ------ */
+
+.ctn-principal {
+    width: 100%;
+    padding: 10px 45px 100px 45px;
+}
+
+/* -------- 3.1 SECTION ------ */
+
+.ctn-principal .ctn-section {
+    display: none;
+}
+
+.ctn-principal .ctn-section.active {
+    display: block;
+}
+
+/* -------- 3.1.1 ACC SECTION ------ */
+
+.ctn-section .acc-section.active {
+    display: none;
+}
+
+.ctn-section .acc-section h1 {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5px;
+    font-weight: 600;
+    font-size: 27px;
+}
+
+/* -------- 3.1.1.1 CTN GRID / SLOT GRID ------ */
+
+.acc-section .ctn-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 30px;
+    column-gap: 40px;
+}
+
+.acc-section .ctn-grid .slot-grid {
+    width: 100%;
+    height: 270px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ctn-grid .slot-grid:hover .ctn-slot-grid .img-slot {
+    box-shadow: 0px 0px 22px -5px rgb(88, 88, 88);
+}
+
+
+.slot-grid .ctn-slot-grid {
+    width: 100%;
+    min-width: 280px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slot-grid .ctn-slot-grid .img-slot {
+    display: flex;
+    background-image: url(../img/calculadora-calorias-libreta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    border-radius: 8px;
+    height: 170px;
+}
+
+.slot-grid .ctn-slot-grid .texto-slot {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    padding: 0px 15px 0px 6px;
+}
+
+.slot-grid .ctn-slot-grid .texto-slot span {
+    padding: 10px 0px 4px 0px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.slot-grid .ctn-slot-grid .texto-slot p {
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 1px;
+    padding-right: 20px;
+    color: #e4e4e4;
+}
+
+
+
+/* ---------------------------------- */
+/* -------- 3.1 APLICACIONES ------ */
+
+/* -------- 3.1.1 CALCULADORA DE CALORÍAS ------ */
+
+.ctn-section .ctn-app .btn-back {
+    padding: 10px;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.ctn-section .ctn-app {
+    display: none;
+    width: 100%;
+    background-color: cyan;
+    color: black;
+}
+
+.ctn-section .ctn-app.active {
+    display: block;
+}
+
+/* -------- 3.2 FOOTER ------ */
+
+.ctn-footer {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 10px 25px;
+    color: #C9D6DF;
+}
+
+
+
+
+
+/* -------- 3.2 FOOTER ------ */
+
+
+@media screen and (max-width: 1700px) {
+
+    .acc-section .ctn-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 1480px) {
+
+    .acc-section .ctn-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 1180px) {
+
+    .acc-section .ctn-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .acc-section .ctn-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ctn-buscador {
+        width: 30%;
+
+    }
+
+    .ctn-menu {
+        width: 42px;
+    }
+
+    .ctn-pagina {
+        width: calc(100% - 42px);
+        margin-left: 42px;
+    }
+
+    .slot-grid .ctn-slot-grid {
+        min-width: 200px;
+    }
+
+    .ctn-principal {
+        width: 100%;
+        padding: 10px 20px 100px 25px;
+    }
+    
+    
+
+}
