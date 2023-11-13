@@ -70,7 +70,7 @@ header {
 
 .logo img{
     width: 22px;
-    margin-left: 20px;
+    margin-left: 35px;
 }
 
 .logo span {
@@ -152,10 +152,41 @@ header {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    padding: 75px 0px 10px 0px;
+    padding: 60px 0px 10px 0px;
     background-color: var(--escalaOscura);
     overflow: hidden;
 }
+
+/* -------- BOTON BAR ------ */
+
+.ctn-bar {
+    display: flex;
+    align-items: center;
+    padding: 0px 5px 1px 0px;
+}
+
+.ctn-bar button {
+    background-color: transparent;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ctn-bar button:hover {
+    background-color: var(--colorMediano);
+}
+
+.ctn-bar button i {
+    color: white;
+    font-size: 20px;
+}
+
+/* -------- OPCIONES A ------ */
 
 .link-menu {
     display: flex;
@@ -196,10 +227,10 @@ header {
 
 .ctn-pagina {
     position: relative;
-    width: calc(100% - 190px);
-    margin-top: 65px;
-    margin-left: 190px;
-    min-height: calc(100vh - 65px);
+    width: calc(100% - 195px);
+    margin-top: 60px;
+    margin-left: 195px;
+    min-height: calc(100vh - 60px);
     color: white;
 }
 
@@ -207,7 +238,7 @@ header {
 
 .ctn-principal {
     width: 100%;
-    padding: 10px 45px 100px 45px;
+    padding: 5px 45px 100px 45px;
 }
 
 /* -------- 3.1 SECTION ------ */
@@ -229,7 +260,6 @@ header {
 .ctn-section .acc-section h1 {
     display: flex;
     font-family: 'Poppins', sans-serif;
-    padding-top: 5px;
     font-weight: 600;
     font-size: 27px;
 }
@@ -257,7 +287,6 @@ header {
 
 .slot-grid .ctn-slot-grid {
     width: 100%;
-    min-width: 265px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -265,7 +294,6 @@ header {
 
 .slot-grid .ctn-slot-grid .img-slot {
     display: flex;
-    background-image: url(../img/calculadora-calorias-libreta.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -280,7 +308,7 @@ header {
     flex-direction: column;
     width: 100%;
     height: 100px;
-    padding: 0px 15px 0px 6px;
+    padding: 0px 15px 0px 8px;
 }
 
 .slot-grid .ctn-slot-grid .texto-slot span {
@@ -296,8 +324,6 @@ header {
     padding-right: 20px;
     color: #e4e4e4;
 }
-
-
 
 /* ---------------------------------- */
 /* -------- 3.1 APLICACIONES ------ */
@@ -333,22 +359,25 @@ header {
     width: 100%;
     display: flex;
     justify-content: end;
-    padding: 10px 25px;
+    padding: 20px 45px;
     color: #C9D6DF;
 }
 
 
 
+
+
+
 /**/
 
-.ctn-section {
-    height: 400px;
-    display: flex;
-}
 .ctn-codigos {
     color: white;
     font-family: 'Open Sans', sans-serif;
     display: flex;
+}
+
+.ctn-codigos div {
+    padding: 10px;
 }
 
 .ctn-codigos a {
@@ -357,6 +386,9 @@ header {
     border-radius: 8px;
     background-color: rgb(20, 170, 70);
 }
+
+
+
 
 
 
@@ -395,7 +427,6 @@ header {
 
     .ctn-buscador {
         width: 30%;
-
     }
 
     .ctn-menu {
@@ -403,17 +434,13 @@ header {
     }
 
     .ctn-pagina {
-        width: calc(100% - 42px);
-        margin-left: 42px;
-    }
-
-    .slot-grid .ctn-slot-grid {
-        min-width: 200px;
+        width: calc(100% - 47px);
+        margin-left: 47px;
     }
 
     .ctn-principal {
         width: 100%;
-        padding: 10px 20px 100px 25px;
+        padding: 5px 25px 100px 25px;
     }
     
     

@@ -79,6 +79,12 @@ botonesBack.forEach((b) => {
     });
 });
 
+// Acciones para boton bar 
+
+const botonBar = document.getElementById('btn-bar');
+
+
+
 // Código prueba
 
 /* const btnCalCalorias = document.getElementById('slot-cal-calorias');
