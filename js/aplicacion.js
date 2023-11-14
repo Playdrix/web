@@ -22,6 +22,11 @@ botonesMenu.forEach((btnSelect) => {
             }
             /* console.log(pag.dataset.seccion) */
         })
+
+        if (window.innerWidth < 850) {
+            ctnPagina.classList.add('active');
+            ctnMenu.classList.add('active');
+        }
     });
 });
 
