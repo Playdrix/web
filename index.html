@@ -18,19 +18,33 @@
 
     <header>
         <div class="ctn-header ctn">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" id="logo">
                 <img src="./img/icono-cuadrados.png" alt=""><span>Drixplay</span>
             </a>
 
-            <div class="ctn-buscador">
-                <input type="search" id="input-buscador" placeholder="Buscar"><i class="fa-solid fa-magnifying-glass"></i>
+            <div class="ctn-buscador" id="ctn-buscador">
+                <button class="ctn-btn-buscador" id="btn-cerrar-buscador">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="buscador" id="buscador">
+                    <input type="search" id="input-buscador" placeholder="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <button class="ctn-btn-buscador" id="btn-microfono">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
             </div>
 
-            <div class="ctn-botones">
-                <a href="#" class="btn-user">
+            <div class="ctn-botones" id="ctn-botones">
+                <button class="btn-derecho mostrar-buscador" id="mostrar-buscador">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="btn-derecho btn-user">
                     <i class="fa-solid fa-user"></i>
-                </a>
-
+                </button>
+                <button class="btn-derecho btn-user">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
             </div>
 
             <div class="ctn-menu" id="ctn-menu">

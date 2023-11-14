@@ -117,6 +117,58 @@ botonBar.addEventListener('click', () => {
 })
 
 
+// Acciones para boton buscador mostrar
+
+
+const btnMostrarBuscador = document.getElementById('mostrar-buscador');
+const btnBuscador = document.querySelectorAll('.ctn-btn-buscador');
+const btnMicrofono = document.getElementById('btn-microfono');
+const ctnBuscador = document.getElementById('ctn-buscador');
+const ctnLogo = document.getElementById('logo');
+const ctnBotones = document.getElementById('ctn-botones')
+
+const btnCerrarBuscador = document.getElementById('btn-cerrar-buscador')
+const ctnBuscadorInput = document.getElementById('buscador')
+
+btnMostrarBuscador.addEventListener('click', () => {
+
+    ctnBuscador.classList.add('active');
+    ctnBotones.classList.add('active');
+    ctnLogo.classList.add('active');
+    ctnBuscadorInput.classList.add('active');
+
+    btnBuscador.forEach((e) => {
+        e.classList.add('active');
+    })
+})
+
+btnCerrarBuscador.addEventListener('click', () => {
+    ctnBuscador.classList.remove('active');
+    ctnBotones.classList.remove('active');
+    ctnLogo.classList.remove('active');
+    ctnBuscadorInput.classList.remove('active');
+
+    btnBuscador.forEach((e) => {
+        e.classList.remove('active');
+    })
+})
+
+window.addEventListener('resize', () => {
+
+    if (window.innerWidth > 560) {
+        ctnBuscador.classList.remove('active');
+        ctnBotones.classList.remove('active');
+        ctnLogo.classList.remove('active');
+        ctnBuscadorInput.classList.remove('active');
+
+        btnBuscador.forEach((e) => {
+            e.classList.remove('active');
+        })
+    }
+
+})
+
+
 
 
 

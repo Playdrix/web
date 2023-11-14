@@ -68,6 +68,10 @@ header {
     gap: 5px;
 }
 
+.logo.active {
+    display: none;
+}
+
 .logo img{
     width: 22px;
     margin-left: 10px;
@@ -83,8 +87,16 @@ header {
 /* -------- 1.2 BUSCADOR ------ */
 
 .ctn-buscador {
-    max-width: 400px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.ctn-buscador .buscador {
+    max-width: 500px;
+    width: 65%;
     display: flex;
     gap: 8px;
     padding: 8px 15px;
@@ -92,6 +104,10 @@ header {
     align-items: center;
     justify-content: center;
     background-color: var(--colorMediano)
+}
+
+.ctn-buscador .buscador.active {
+    width: 85%;
 }
 
 #input-buscador {
@@ -109,36 +125,72 @@ header {
     color: white;
 }
 
-.ctn-buscador .fa-solid:hover {
-    color: #00ADB5;
+.ctn-buscador .ctn-btn-buscador {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-/* -------- 1.3 BUSCADOR ------ */
+.ctn-buscador .ctn-btn-buscador.active {
+    display: flex;
+}
+
+.ctn-buscador .ctn-btn-buscador .fa-solid{
+    font-size: 20px;
+    color: rgb(235, 235, 235);
+}
+
+.ctn-buscador .ctn-btn-buscador .fa-xmark {
+    font-size: 23px;
+}
+
+/* -------- 1.3 BOTONES ------ */
 
 .ctn-botones {
     display: flex;
     margin-right: 15px;
+    gap: 2px;
 }
 
-.ctn-botones a {
+.ctn-botones.active {
+    display: none;
+}
+
+.ctn-botones .btn-derecho {
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    border: none;
     background-color: transparent;
     border-radius: 20px;
-    width: 33px;
-    height: 33px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.ctn-botones .mostrar-buscador {
+    display: none;
 }
 
 /* -------- 1.4 OPCIONES ------ */
 
-.ctn-botones a:hover {
+.ctn-botones .btn-derecho:hover {
     background-color: var(--colorMediano);
 }
 
-.fa-user {
+.btn-derecho .fa-solid {
     font-size: 1rem;
+}
+
+.btn-derecho .fa-ellipsis-vertical {
+    font-size: 1.1rem;
 }
 
 /* -------- 2. MENU ------ */
@@ -472,6 +524,23 @@ header {
 
     .ctn-principal {
         padding: 5px 19px 100px 19px;
+    }
+
+    .ctn-botones {
+        display: flex;
+        margin-right: 5px;
+    }
+
+    .ctn-botones .mostrar-buscador {
+        display: flex;
+    }
+
+    .ctn-buscador {
+        display: none;
+    }
+    
+    .ctn-buscador.active {
+        display: flex;
     }
 
 
