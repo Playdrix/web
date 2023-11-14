@@ -82,8 +82,82 @@ botonesBack.forEach((b) => {
 // Acciones para boton bar 
 
 const botonBar = document.getElementById('btn-bar');
+const ctnMenu = document.getElementById('ctn-menu');
+const ctnPagina = document.getElementById('ctn-pagina');
+
+if (window.innerWidth < 850) {
+    ctnMenu.classList.add('active');
+    ctnPagina.classList.add('active');
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth < 850) {
+        ctnMenu.classList.add('active');
+        ctnPagina.classList.add('active');
+    } else if (window.innerWidth > 850) {
+    ctnMenu.classList.remove('active');
+    ctnPagina.classList.remove('active');
+}
+})
 
 
+botonBar.addEventListener('click', () => {
+    ctnMenu.classList.toggle('active');
+
+    if (window.innerWidth < 850) {
+        ctnPagina.classList.add('active');
+    } else if (window.innerWidth > 850) {
+        ctnPagina.classList.toggle('active');
+    }
+})
+
+
+
+
+
+// Código prueba
+ 
+/* let indicador = 0
+let indicador2 = 0
+
+botonBar.addEventListener('click', () => {
+
+    if (window.innerWidth > 850 && indicador == 0) {
+        ctnMenu.style.width = '42px'
+        ctnPagina.style.width = 'calc(100% - 47px)'
+        ctnPagina.style.marginLeft = '47px'
+        
+        console.log('func')
+        indicador = 1
+    } else if (indicador == 1) {
+        ctnMenu.style.width = '190px'
+        ctnPagina.style.width = 'calc(100% - 195px)'
+        ctnPagina.style.marginLeft = '195px'
+        indicador = 0
+    }
+    
+    if (window.innerWidth < 850  && indicador2 == 0) {
+        ctnMenu.style.width = '190px'
+        ctnPagina.style.width = 'calc(100% - 47px)'
+        ctnPagina.style.marginLeft = '47px'
+        
+        indicador2 = 1
+
+    } else if (window.innerWidth < 850  && indicador2 == 1) {
+        ctnMenu.style.width = '42px'
+        ctnPagina.style.width = 'calc(100% - 47px)'
+        ctnPagina.style.marginLeft = '47px'
+        
+        indicador2 = 0
+    }
+}); */
+
+
+/* window.addEventListener('resize', (evento) => {
+    console.log(evento)
+}) */
+
+console.log(window.innerWidth)
 
 // Código prueba
 
