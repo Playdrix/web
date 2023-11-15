@@ -99,10 +99,10 @@ window.addEventListener('resize', () => {
     if (window.innerWidth < 850) {
         ctnMenu.classList.add('active');
         ctnPagina.classList.add('active');
-    } else if (window.innerWidth > 850) {
+    } /* else if (window.innerWidth > 850) {
     ctnMenu.classList.remove('active');
     ctnPagina.classList.remove('active');
-}
+} */
 })
 
 
@@ -153,7 +153,7 @@ btnCerrarBuscador.addEventListener('click', () => {
     })
 })
 
-window.addEventListener('resize', () => {
+/* window.addEventListener('resize', () => {
 
     if (window.innerWidth > 560) {
         ctnBuscador.classList.remove('active');
@@ -166,7 +166,7 @@ window.addEventListener('resize', () => {
         })
     }
 
-})
+}) */
 
 
 

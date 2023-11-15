@@ -392,28 +392,75 @@ header {
     color: #e4e4e4;
 }
 
+
+
 /* ---------------------------------- */
 /* -------- 3.1 APLICACIONES ------ */
 
-/* -------- 3.1.1 CALCULADORA DE CALORÍAS ------ */
-
-.ctn-section .ctn-app .btn-back {
-    padding: 10px;
-    margin: 10px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
 .ctn-section .ctn-app {
     display: none;
-    width: 100%;
-    background-color: cyan;
-    color: black;
+    color: white;
 }
 
 .ctn-section .ctn-app.active {
     display: block;
 }
+
+/* ------------------------- 3.1.1 CALCULADORA DE CALORÍAS ----------------------- */
+
+.app-calc-cal {
+    display: grid;
+    background-color: rgb(37, 37, 37);
+    border-radius: 8px;
+    box-shadow: 0px 0px 9px 0px rgba(97, 97, 97, 0.75);
+    padding: 12px 13px;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas: 
+        "back-cal titulo-cal titulo-cal vacio1-cal"
+        "datos-cal datos-cal resultado-cal resultado-cal";
+} 
+
+.app-calc-cal .grid-btn-back {
+    grid-area: back-cal;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+}
+.ctn-btn-back #back-cal-calorias {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    padding: 10px;
+    font-size: 22px;
+    border: none;
+    background-color: rgb(168, 44, 44);
+    border-radius: 20px;
+    color: white;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.app-calc-cal .grid-titulo-cal {
+    grid-area: titulo-cal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app-calc-cal .grid-datos-cal {
+    grid-area: datos-cal;
+}
+
+.app-calc-cal .grid-result-cal {
+    grid-area: resultado-cal
+}
+
+
 
 /* -------- 3.2 FOOTER ------ */
 
