@@ -192,16 +192,43 @@
                         <div class="grid-titulo-cal">
                             <h2>Calculadora de calorías</h2>
                         </div>
-                        <div class="grid-datos-cal">
-                            <ul>
-                                <li>Edad:<input type="text"></li>
-                                <li>Peso:<input type="text"></li>
-                                <li>Talla:<input type="text"></li>
-                            </ul>
-                            <input type="submit" name="" id="" value="Calcular">
-                        </div>
+                        <form class="grid-datos-cal">
+                            <div class="ctn-dato-cal">
+                                <label for="text-edad">Edad:</label>
+                                <input type="number" id="text-edad" placeholder="Años" required>
+                            </div>
+                            <div class="ctn-dato-cal">
+                                <label for="text-peso">Peso:</label>
+                                <input type="number" id="text-peso" placeholder="Kg"></li>
+                            </div>
+                            <div class="ctn-dato-cal">
+                                <label for="text-altura">Altura:</label>
+                                <input type="number" id="text-altura" placeholder="cm">
+                            </div>
+                            <div class="ctn-dato-cal">
+                                <label for="text-genero">Género:</label>
+                                <select name="" id="text-genero">
+                                    <option value="hombre">Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                                </select>
+                            </div>
+                            <div class="ctn-dato-cal">
+                                <label for="text-actividad">Actividad física:</label>
+                                <select name="" id="text-actividad">
+                                    <option value="liviano">Liviano</option>
+                                    <option value="moderado">Moderado</option>
+                                    <option value="muy-activo">Muy activo</option>
+                                </select>
+                            </div>
+                            <div class="btn-enviar-cal">
+                                <input type="submit" name="" id="btn-calcular-cal" value="Calcular">
+                            </div>
+                        </form>
                         <div class="grid-result-cal">
-                            Tus calorías totales son:
+                            <div class="ctn-result-cal">
+                                <span>Tus calorías son:</span>
+                                <span class="num-calorias"><span id="num-calorias">2800</span>Calorías</span>
+                            </div>
                         </div>
                     </div>
                 </div>

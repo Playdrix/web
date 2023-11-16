@@ -169,6 +169,39 @@ btnCerrarBuscador.addEventListener('click', () => {
 }) */
 
 
+// Aplicación CALCULADORA DE CALORÍAS
+
+/* La fórmula Harris revisada por Roza y Shizgall (1994) 2 :
+
+        Hombre: 13,707 x Peso(kg) + 492,3 x Altura(m) - 6,673 x Edad(años) + 77,607005
+        Mujer: 9.740 x Peso(kg) + 172.9 x Talla(m) - 4.737 x Edad(años) + 667.051005 */
+
+const valorPeso = document.getElementById('text-peso');
+const valorAltura = document.getElementById('text-peso');
+const valorEdad = document.getElementById('text-edad');
+const btnCalcular = document.getElementById('btn-calcular-cal')
+const resultadoCalorias = document.getElementById('num-calorias')
+
+/* let resultadoEdad = 0
+let resultadoPeso = 0
+let resultadoAltura = 0 */
+let resultadoCalculo = 0
+
+btnCalcular.addEventListener('click', () => {
+
+    if (true) {
+        resultadoCalculo = ((13.707 *(valorPeso.value*1)) + ((492.3/100) * (valorAltura.value*1)) + (6.673*(valorEdad.value*1)) - 77.607005)/*  * 1.375 */
+
+        /* resultadoCalculo.toFixed(0); */
+
+        resultadoCalorias.innerHTML = resultadoCalculo.toFixed(0)
+    }
+})
+
+const valorGenero = document.getElementById('text-genero')
+
+console.log(valorGenero.value)
+
 
 
 

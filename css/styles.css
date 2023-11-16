@@ -410,13 +410,15 @@ header {
 
 .app-calc-cal {
     display: grid;
+    max-width: 900px;
+    margin: 15px auto 0 auto;
     background-color: rgb(37, 37, 37);
     border-radius: 8px;
     box-shadow: 0px 0px 9px 0px rgba(97, 97, 97, 0.75);
     padding: 12px 13px;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
 
     grid-template-areas: 
         "back-cal titulo-cal titulo-cal vacio1-cal"
@@ -437,27 +439,111 @@ header {
     padding: 10px;
     font-size: 22px;
     border: none;
-    background-color: rgb(168, 44, 44);
+    background-color: rgb(182, 39, 39);
     border-radius: 20px;
     color: white;
     gap: 5px;
     cursor: pointer;
 }
 
+
+
 .app-calc-cal .grid-titulo-cal {
     grid-area: titulo-cal;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    padding: 15px 0px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .app-calc-cal .grid-datos-cal {
     grid-area: datos-cal;
+    margin: 0 auto;
+    padding: 10px 0px;
 }
 
+.app-calc-cal .grid-datos-cal .ctn-dato-cal {
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.app-calc-cal .grid-datos-cal .ctn-dato-cal label {
+    display: inline-flex;
+    font-family: 'Poppins', sans-serif;
+    min-width: 140px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.app-calc-cal .grid-datos-cal .ctn-dato-cal input{
+    padding: 10px 10px;
+    border-radius: 8px;
+    min-width: 195px;
+    outline: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.app-calc-cal .grid-datos-cal .ctn-dato-cal select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    min-width: 195px;
+    outline: none;
+    border: none;
+}
+
+/*  botones */
+
+.app-calc-cal .btn-enviar-cal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 5px 10px;
+}
+
+.app-calc-cal .btn-enviar-cal input {
+    padding: 8px 12px;
+    background-color: rgb(49, 155, 49);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.app-calc-cal .btn-enviar-cal input:hover {
+    font-size: 15px;
+    background-color: rgb(39, 185, 39);
+}
+
+
+
 .app-calc-cal .grid-result-cal {
-    grid-area: resultado-cal
+    grid-area: resultado-cal;
+    padding: 10px 0px;
+    margin: 0 auto;
+}
+
+.app-calc-cal .grid-result-cal .ctn-result-cal {
+    padding: 10px;
+}
+
+.app-calc-cal .grid-result-cal .ctn-result-cal span {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app-calc-cal .grid-result-cal .ctn-result-cal .num-calorias {
+    font-size: 40px;
 }
 
 
