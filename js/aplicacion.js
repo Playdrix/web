@@ -173,14 +173,27 @@ btnCerrarBuscador.addEventListener('click', () => {
 
 /* La fórmula Harris revisada por Roza y Shizgall (1994) 2 :
 
-        Hombre: 13,707 x Peso(kg) + 492,3 x Altura(m) - 6,673 x Edad(años) + 77,607005
-        Mujer: 9.740 x Peso(kg) + 172.9 x Talla(m) - 4.737 x Edad(años) + 667.051005 */
+    Hombre: 13,707 x Peso(kg) + 492,3 x Altura(m) - 6,673 x Edad(años) + 77,607005
+    Mujer: 9.740 x Peso(kg) + 172.9 x Talla(m) - 4.737 x Edad(años) + 667.051005 
+    
+    1.375: sedentario (trabajo de oficina y poca actividad física)
+    1,56: actividad física ligera (entrenamiento de 1 a 3 veces por semana)
+    1,64: actividad física moderada (entrenamiento de 4 a 6 veces por semana)
+    1,82: actividad física intensa (más de 6 sesiones de entrenamiento por semana)
+    
+*/
 
 const valorPeso = document.getElementById('text-peso');
-const valorAltura = document.getElementById('text-peso');
+const valorAltura = document.getElementById('text-altura');
 const valorEdad = document.getElementById('text-edad');
-const btnCalcular = document.getElementById('btn-calcular-cal')
-const resultadoCalorias = document.getElementById('num-calorias')
+
+
+
+const valorGenero = document.getElementById('text-genero');
+const valorActividad = document.getElementById('text-actividad');
+
+const btnCalcular = document.getElementById('btn-calcular-cal');
+const resultadoCalorias = document.getElementById('num-calorias');
 
 /* let resultadoEdad = 0
 let resultadoPeso = 0
@@ -188,19 +201,20 @@ let resultadoAltura = 0 */
 let resultadoCalculo = 0
 
 btnCalcular.addEventListener('click', () => {
-
-    if (true) {
-        resultadoCalculo = ((13.707 *(valorPeso.value*1)) + ((492.3/100) * (valorAltura.value*1)) + (6.673*(valorEdad.value*1)) - 77.607005)/*  * 1.375 */
-
-        /* resultadoCalculo.toFixed(0); */
-
+    if (valorGenero.value === 'hombre') {
+        console.log(valorGenero.value)
+        resultadoCalculo = (13.707 *(valorPeso.value*1)) + ((492.3/100) * (valorAltura.value*1)) - (6.673*(valorEdad.value*1)) + 77.607005 /*  * 1.375 */
+        resultadoCalorias.innerHTML = resultadoCalculo.toFixed(0)
+    } else if (valorGenero.value === 'mujer') {
+        console.log(valorGenero.value)
+        resultadoCalculo = (((9.740 *(valorPeso.value*1)) + ((172.9/100) * (valorAltura.value*1)) - (4.737*(valorEdad.value*1))) + 667.051005)/*  * 1.375 */
         resultadoCalorias.innerHTML = resultadoCalculo.toFixed(0)
     }
 })
 
-const valorGenero = document.getElementById('text-genero')
+/* const valorGenero = document.getElementById('text-genero')
 
-console.log(valorGenero.value)
+console.log(valorGenero.value) */
 
 
 
