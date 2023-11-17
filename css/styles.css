@@ -491,7 +491,7 @@ header {
 .app-calc-cal .grid-datos-cal .ctn-dato-cal input{
     padding: 10px 10px;
     border-radius: 8px;
-    min-width: 195px;
+    min-width: 182px;
     outline: none;
     border: none;
     font-family: 'Montserrat', sans-serif;
@@ -500,7 +500,7 @@ header {
 .app-calc-cal .grid-datos-cal .ctn-dato-cal select {
     padding: 8px 10px;
     border-radius: 8px;
-    min-width: 195px;
+    min-width: 182px;
     outline: none;
     border: none;
 }
