@@ -176,10 +176,11 @@ btnCerrarBuscador.addEventListener('click', () => {
     Hombre: 13,707 x Peso(kg) + 492,3 x Altura(m) - 6,673 x Edad(años) + 77,607005
     Mujer: 9.740 x Peso(kg) + 172.9 x Talla(m) - 4.737 x Edad(años) + 667.051005 
     
-    1.375: sedentario (trabajo de oficina y poca actividad física)
-    1,56: actividad física ligera (entrenamiento de 1 a 3 veces por semana)
-    1,64: actividad física moderada (entrenamiento de 4 a 6 veces por semana)
-    1,82: actividad física intensa (más de 6 sesiones de entrenamiento por semana)
+    1.2: Sedentaria: tumbado o poco nada de ejercicio.
+    1.375: Liviana: De pie, conducir, planchar, caminar. (trabajo de oficina y poca actividad física)
+    1,55: Moderada: Limpiar, caminar rápido, cargar peso.(entrenamiento de 1 a 3 veces por semana)
+    1,725: Activa: Construcción, subir escaleras.(entrenamiento de 4 a 6 veces por semana)
+    1,9: Muy activa: Trabajos de mucha fuerza, correr activamente. (más de 6 sesiones de entrenamiento por semana)
     
 */
 
@@ -187,29 +188,49 @@ const valorPeso = document.getElementById('text-peso');
 const valorAltura = document.getElementById('text-altura');
 const valorEdad = document.getElementById('text-edad');
 
-
-
 const valorGenero = document.getElementById('text-genero');
 const valorActividad = document.getElementById('text-actividad');
 
+const btnRestablecer = document.getElementById('restablecer-cal-calorias');
 const btnCalcular = document.getElementById('btn-calcular-cal');
 const resultadoCalorias = document.getElementById('num-calorias');
 
-/* let resultadoEdad = 0
-let resultadoPeso = 0
-let resultadoAltura = 0 */
-let resultadoCalculo = 0
+let resultadoInicial = 0;
+let resultadoFinal;
 
 btnCalcular.addEventListener('click', () => {
     if (valorGenero.value === 'hombre') {
-        console.log(valorGenero.value)
-        resultadoCalculo = (13.707 *(valorPeso.value*1)) + ((492.3/100) * (valorAltura.value*1)) - (6.673*(valorEdad.value*1)) + 77.607005 /*  * 1.375 */
-        resultadoCalorias.innerHTML = resultadoCalculo.toFixed(0)
+        resultadoInicial = (13.707 *(valorPeso.value*1)) + ((492.3/100) * (valorAltura.value*1)) - (6.673*(valorEdad.value*1)) + 77.607005
     } else if (valorGenero.value === 'mujer') {
-        console.log(valorGenero.value)
-        resultadoCalculo = (((9.740 *(valorPeso.value*1)) + ((172.9/100) * (valorAltura.value*1)) - (4.737*(valorEdad.value*1))) + 667.051005)/*  * 1.375 */
-        resultadoCalorias.innerHTML = resultadoCalculo.toFixed(0)
+        resultadoInicial = ((9.740 *(valorPeso.value*1)) + ((172.9/100) * (valorAltura.value*1)) - (4.737*(valorEdad.value*1))) + 667.051005
     }
+
+    let actividadFisica = {
+        sedentaria: 1.2,
+        liviana: 1.375,
+        moderada: 1.55,
+        activa: 1.725,
+        muyActiva: 1.9
+    }
+
+    resultadoFinal = Math.round(resultadoInicial*actividadFisica[valorActividad.value])
+
+    resultadoCalorias.textContent = resultadoFinal
+
+    if (resultadoCalorias.textContent === 'NaN' || valorGenero.selectedIndex === 0 || valorActividad.selectedIndex === 0
+        || valorPeso.value === "" || valorAltura.value === "" || valorEdad.value === "") {
+        resultadoCalorias.textContent = '0'
+    }
+})
+
+btnRestablecer.addEventListener('click', () => {
+    resultadoFinal = 0
+    valorPeso.value = ""
+    valorAltura.value = ""
+    valorEdad.value = ""
+    valorGenero.selectedIndex = 0;
+    valorActividad.selectedIndex = 0;
+    resultadoCalorias.textContent = resultadoFinal
 })
 
 /* const valorGenero = document.getElementById('text-genero')

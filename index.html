@@ -195,7 +195,7 @@
                         <div class="grid-datos-cal">
                             <div class="ctn-dato-cal">
                                 <label for="text-edad">Edad:</label>
-                                <input type="number" id="text-edad" placeholder="Años" required>
+                                <input type="number" id="text-edad" placeholder="Años">
                             </div>
                             <div class="ctn-dato-cal">
                                 <label for="text-peso">Peso:</label>
@@ -208,6 +208,7 @@
                             <div class="ctn-dato-cal">
                                 <label for="text-genero">Género:</label>
                                 <select name="" id="text-genero">
+                                    <option value="seleccionar">- Seleccionar -</option>
                                     <option value="hombre">Hombre</option>
                                     <option value="mujer">Mujer</option>
                                 </select>
@@ -215,19 +216,33 @@
                             <div class="ctn-dato-cal">
                                 <label for="text-actividad">Actividad física:</label>
                                 <select name="" id="text-actividad">
-                                    <option value="liviano">Liviano</option>
-                                    <option value="moderado">Moderado</option>
-                                    <option value="muy-activo">Muy activo</option>
+                                    <option value="'seleccionar">- Seleccionar -</option>
+                                    <option value="sedentaria">Sedentaria</option>
+                                    <option value="liviana">Liviana</option>
+                                    <option value="moderada">Moderada</option>
+                                    <option value="activa">Activa</option>
+                                    <option value="muyActiva">Muy activa</option>
                                 </select>
+                                <div class="ctn-alerta-cal">
+                                    <br>
+                                    <p>*Completa todos los campos y selecciona ambas opciones.</p>
+                                </div>
                             </div>
                             <div class="btn-enviar-cal">
+                                <button class="btn-restablecer" id="restablecer-cal-calorias">Restablecer</button>
                                 <button id="btn-calcular-cal">Calcular</button>
                             </div>
                         </div>
                         <div class="grid-result-cal">
                             <div class="ctn-result-cal">
-                                <span>Tus calorías son:</span>
-                                <span class="num-calorias"><span id="num-calorias">2800</span>Calorías</span>
+                                <span class="tus-calorias">Tus calorías diarias son:</span>
+                                <span id="num-calorias">0</span>
+                                <span class="num-calorias">Calorías</span>
+                            </div>
+                            <div class="ctn-macronutrientes-cal">
+                                <span>Proteinas</span>
+                                <span>Carbohidratos</span>
+                                <span>Grasas</span>
                             </div>
                         </div>
                     </div>

@@ -82,6 +82,7 @@ header {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 /* -------- 1.2 BUSCADOR ------ */
@@ -394,6 +395,10 @@ header {
 
 
 
+
+
+
+
 /* ---------------------------------- */
 /* -------- 3.1 APLICACIONES ------ */
 
@@ -405,6 +410,13 @@ header {
 .ctn-section .ctn-app.active {
     display: block;
 }
+
+
+
+
+
+
+
 
 /* ------------------------- 3.1.1 CALCULADORA DE CALORÍAS ----------------------- */
 
@@ -430,19 +442,18 @@ header {
     display: flex;
     font-family: 'Open Sans', sans-serif;
 }
-.ctn-btn-back #back-cal-calorias {
+
+.ctn-btn-back .btn-back {
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: rgb(219, 40, 40);
     width: 35px;
     height: 35px;
-    justify-content: center;
-    padding: 10px;
-    font-size: 22px;
     border: none;
-    background-color: rgb(182, 39, 39);
     border-radius: 20px;
+    font-size: 22px;
     color: white;
-    gap: 5px;
     cursor: pointer;
 }
 
@@ -456,6 +467,7 @@ header {
     padding: 15px 0px;
     font-family: 'Open Sans', sans-serif;
 }
+
 
 .app-calc-cal .grid-datos-cal {
     grid-area: datos-cal;
@@ -471,7 +483,7 @@ header {
 .app-calc-cal .grid-datos-cal .ctn-dato-cal label {
     display: inline-flex;
     font-family: 'Poppins', sans-serif;
-    min-width: 140px;
+    min-width: 160px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -493,18 +505,35 @@ header {
     border: none;
 }
 
+.app-calc-cal .grid-datos-cal .ctn-dato-cal .ctn-alerta-cal p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.801);
+}
+
 /*  botones */
+
 
 .app-calc-cal .btn-enviar-cal {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 40px;
     padding: 20px 10px 5px 10px;
 }
 
-.app-calc-cal .btn-enviar-cal input {
+.app-calc-cal .btn-enviar-cal .btn-restablecer{
+    background-color: rgb(219, 40, 40, 0.85);
+}
+
+.app-calc-cal .btn-enviar-cal .btn-restablecer:hover {
+    background-color: rgb(226, 12, 12);
+}
+
+.app-calc-cal .btn-enviar-cal button {
     padding: 8px 12px;
-    background-color: rgb(49, 155, 49);
+    background-color: rgb(47, 175, 47, 0.85);
     font-family: 'Open Sans', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 15px;
@@ -514,10 +543,10 @@ header {
     cursor: pointer;
 }
 
-.app-calc-cal .btn-enviar-cal input:hover {
-    font-size: 15px;
+.app-calc-cal .btn-enviar-cal #btn-calcular-cal:hover {
     background-color: rgb(39, 185, 39);
 }
+
 
 
 
@@ -534,7 +563,8 @@ header {
 .app-calc-cal .grid-result-cal .ctn-result-cal span {
     display: flex;
     flex-direction: column;
-    font-size: 25px;
+    text-align: center;
+    font-size: 22px;
     font-weight: 500;
     padding: 10px;
     align-items: center;
@@ -543,8 +573,27 @@ header {
 }
 
 .app-calc-cal .grid-result-cal .ctn-result-cal .num-calorias {
-    font-size: 40px;
+    font-size: 25px;
 }
+
+.app-calc-cal .grid-result-cal .ctn-result-cal #num-calorias {
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(0, 204, 255);
+}
+
+.app-calc-cal .grid-result-cal .ctn-macronutrientes-cal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+
+
+
+
 
 
 
@@ -625,29 +674,49 @@ header {
 
 
 
-/* @media screen and (max-width: 850px) {
+@media screen and (max-width: 850px) {
 
-    .ctn-buscador {
-        width: 30%;
+    .app-calc-cal {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr;
+
+        grid-template-areas: 
+            "back-cal vacio2-cal vacio2-cal vacio1-cal"
+            "titulo-cal titulo-cal titulo-cal titulo-cal"
+            "datos-cal datos-cal datos-cal datos-cal"
+            "resultado-cal resultado-cal resultado-cal resultado-cal";
     }
 
-    .ctn-menu {
-        width: 42px;
+    .app-calc-cal .grid-datos-cal .ctn-dato-cal label {
+        min-width: 90px;
     }
 
-    .ctn-pagina {
-        width: calc(100% - 47px);
-        margin-left: 47px;
+    .app-calc-cal .grid-datos-cal .ctn-dato-cal input{
+        min-width: 100%;
     }
 
-    .ctn-principal {
-        width: 100%;
-        padding: 5px 25px 100px 25px;
+    .app-calc-cal .grid-datos-cal .ctn-dato-cal select {
+        min-width: 100%;
     }
-    
-    
 
-} */
+    .app-calc-cal .btn-enviar-cal {
+        gap: 5px;
+    }
+
+    .app-calc-cal .grid-titulo-cal h2 {
+        text-align: center;
+    }
+
+    .app-calc-cal .btn-enviar-cal button {
+        padding: 6px 6px;
+        font-size: 13px;
+    }
+
+    .app-calc-cal .grid-result-cal .ctn-result-cal .tus-calorias {
+        font-size: 18px;
+    }
+
+}
 
 @media screen and (max-width: 560px) {
 
