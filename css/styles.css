@@ -556,32 +556,44 @@ header {
     margin: 0 auto;
 }
 
-.app-calc-cal .grid-result-cal .ctn-result-cal {
+/* .app-calc-cal .grid-result-cal .ctn-result-cal {
     padding: 10px;
 }
-
+ */
 .app-calc-cal .grid-result-cal .ctn-result-cal span {
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: 22px;
     font-weight: 500;
-    padding: 10px;
+    padding: 8px;
     align-items: center;
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
 }
 
 .app-calc-cal .grid-result-cal .ctn-result-cal .num-calorias {
-    font-size: 25px;
+    font-size: 22px;
 }
 
-.app-calc-cal .grid-result-cal .ctn-result-cal #num-calorias {
+.app-calc-cal .grid-result-cal .ctn-result-cal div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-calc-cal .grid-result-cal .ctn-result-cal div span {
     font-size: 45px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(0, 204, 255);
 }
 
+/* .app-calc-cal .grid-result-cal .ctn-result-cal div .tex-kcal {
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(0, 204, 255);
+}
+ */
 .app-calc-cal .grid-result-cal .ctn-macronutrientes-cal {
     display: flex;
     justify-content: center;
@@ -615,6 +627,11 @@ header {
 
 .ctn-macronutrientes-cal .ctn-sect-macro .valor-porcentaje-cal {
     color: rgb(0, 204, 255);
+    font-size: 16px;
+}
+
+.ctn-macronutrientes-cal .ctn-sect-macro .valor-gramos-cal {
+    color: rgb(46, 223, 11);
     font-size: 16px;
 }
 

@@ -198,6 +198,21 @@ const resultadoCalorias = document.getElementById('num-calorias');
 let resultadoInicial = 0;
 let resultadoFinal;
 
+const valor10Proteinas = document.getElementById('porcentaje-10-proteinas');
+const valor35Proteinas = document.getElementById('porcentaje-35-proteinas');
+const gramos10Proteinas = document.getElementById('gramos-10-proteinas');
+const gramos35Proteinas = document.getElementById('gramos-35-proteinas');
+
+const valor45Carbohidratos = document.getElementById('porcentaje-45-carbohidratos');
+const valor65Carbohidratos = document.getElementById('porcentaje-65-carbohidratos');
+const gramos45Carbohidratos = document.getElementById('gramos-45-carbohidratos');
+const gramos65Carbohidratos = document.getElementById('gramos-65-carbohidratos');
+
+const valor20Grasas = document.getElementById('porcentaje-20-grasas');
+const valor35Grasas = document.getElementById('porcentaje-35-grasas');
+const gramos20Grasas = document.getElementById('gramos-20-grasas');
+const gramos35Grasas = document.getElementById('gramos-35-grasas');
+
 btnCalcular.addEventListener('click', () => {
     if (valorGenero.value === 'hombre') {
         resultadoInicial = (13.707 *(valorPeso.value*1)) + ((492.3/100) * (valorAltura.value*1)) - (6.673*(valorEdad.value*1)) + 77.607005
@@ -217,10 +232,59 @@ btnCalcular.addEventListener('click', () => {
 
     resultadoCalorias.textContent = resultadoFinal
 
-    if (resultadoCalorias.textContent === 'NaN' || valorGenero.selectedIndex === 0 || valorActividad.selectedIndex === 0
+    valor10Proteinas.textContent = Math.round((resultadoFinal / 100) * 10) + ' kcal';
+    valor35Proteinas.textContent = Math.round((resultadoFinal / 100) * 35) + ' kcal';
+    gramos10Proteinas.textContent = Math.round(((resultadoFinal / 100) * 10)/4) + ' g';
+    gramos35Proteinas.textContent = Math.round(((resultadoFinal / 100) * 35)/4) + ' g';
+
+    valor45Carbohidratos.textContent = Math.round((resultadoFinal / 100) * 45) + ' kcal';
+    valor65Carbohidratos.textContent = Math.round((resultadoFinal / 100) * 65) + ' kcal';
+    gramos45Carbohidratos.textContent = Math.round(((resultadoFinal / 100) * 45)/4) + ' g';
+    gramos65Carbohidratos.textContent = Math.round(((resultadoFinal / 100) * 65)/4) + ' g';
+    
+    valor20Grasas.textContent = Math.round((resultadoFinal / 100) * 20) + ' kcal';
+    valor35Grasas.textContent = Math.round((resultadoFinal / 100) * 35) + ' kcal';
+    gramos20Grasas.textContent = Math.round(((resultadoFinal / 100) * 20)/9) + ' g';
+    gramos35Grasas.textContent = Math.round(((resultadoFinal / 100) * 35)/9) + ' g';
+
+
+
+    if (resultadoCalorias.textContent === 'NaN' 
+        || valor10Proteinas.textContent === 'NaN'
+        || valor35Proteinas.textContent === 'NaN'
+        || gramos10Proteinas.textContent === 'NaN'
+        || gramos35Proteinas.textContent === 'NaN'
+        || valor45Carbohidratos.textContent === 'NaN'
+        || valor65Carbohidratos.textContent === 'NaN'
+        || gramos45Carbohidratos.textContent === 'NaN'
+        || gramos65Carbohidratos.textContent === 'NaN'
+        
+        || valor20Grasas.textContent === 'NaN'
+        || valor35Grasas.textContent === 'NaN'
+        || gramos20Grasas.textContent === 'NaN'
+        || gramos35Grasas.textContent === 'NaN'
+
+        || valorGenero.selectedIndex === 0 
+        || valorActividad.selectedIndex === 0
         || valorPeso.value === "" || valorAltura.value === "" || valorEdad.value === "") {
         resultadoCalorias.textContent = '0'
-    }
+
+        valor10Proteinas.textContent = '0'
+        valor35Proteinas.textContent =  '0'
+        gramos10Proteinas.textContent = '0'
+        gramos35Proteinas.textContent = '0'
+    
+        valor45Carbohidratos.textContent = '0'
+        valor65Carbohidratos.textContent = '0'
+        gramos45Carbohidratos.textContent = '0'
+        gramos65Carbohidratos.textContent = '0'
+        
+        valor20Grasas.textContent = '0'
+        valor35Grasas.textContent = '0'
+        gramos20Grasas.textContent = '0'
+        gramos35Grasas.textContent = '0'
+        
+    };
 })
 
 btnRestablecer.addEventListener('click', () => {
@@ -231,6 +295,21 @@ btnRestablecer.addEventListener('click', () => {
     valorGenero.selectedIndex = 0;
     valorActividad.selectedIndex = 0;
     resultadoCalorias.textContent = resultadoFinal
+
+    valor10Proteinas.textContent = 0
+    valor35Proteinas.textContent =  0
+    gramos10Proteinas.textContent = 0
+    gramos35Proteinas.textContent = 0
+
+    valor45Carbohidratos.textContent = 0
+    valor65Carbohidratos.textContent = 0
+    gramos45Carbohidratos.textContent = 0
+    gramos65Carbohidratos.textContent = 0
+    
+    valor20Grasas.textContent = 0
+    valor35Grasas.textContent = 0
+    gramos20Grasas.textContent = 0
+    gramos35Grasas.textContent = 0
 })
 
 /* const valorGenero = document.getElementById('text-genero')
